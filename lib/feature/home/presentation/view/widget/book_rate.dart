@@ -2,7 +2,10 @@ import 'package:book_app/core/utils/style.dart';
 import 'package:flutter/material.dart';
 
 class BookRate extends StatelessWidget {
-  const BookRate({super.key, this.mainAxisAlignment = MainAxisAlignment.start});
+  const BookRate({
+    super.key,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+  });
   final MainAxisAlignment mainAxisAlignment;
 
   @override
