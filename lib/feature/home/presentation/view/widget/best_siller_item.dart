@@ -20,7 +20,8 @@ class BestSellerListViewItem extends StatelessWidget {
         child: Row(
           children: [
             CustomBookImage(
-                imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ?? ''),
+                imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ??
+                    'assets/images/design-for-writers-book-cover-tf-2-a-million-to-one (1).webp'),
             const SizedBox(
               width: 30,
             ),

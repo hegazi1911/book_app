@@ -7,6 +7,7 @@ import 'package:book_app/feature/home/presentation/view/widget/book_rate.dart';
 import 'package:book_app/feature/home/presentation/view/widget/custom_app_bar_book.dart';
 import 'package:book_app/feature/home/presentation/view/widget/custom_book_image.dart';
 import 'package:book_app/feature/home/presentation/view/widget/feature_list_view.dart';
+import 'package:book_app/feature/home/presentation/view/widget/shimmer_lodaing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -92,7 +93,7 @@ class BookDetailesBody extends StatelessWidget {
         } else if (state is SimilerBookFailure) {
           return CustomError(errMesage: state.errMasseg);
         } else {
-          return Center(child: CircularProgressIndicator());
+          return ShimmerListBooks();
         }
       },
     );

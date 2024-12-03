@@ -4,6 +4,7 @@ import 'package:book_app/feature/home/presentation/view/widget/custom_book_image
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shimmer/shimmer.dart';
 
 class FeatureListView extends StatelessWidget {
   const FeatureListView({
@@ -29,16 +30,56 @@ class FeatureListView extends StatelessWidget {
                     child: CustomBookImage(
                         imageUrl: state.books[index].volumeInfo?.imageLinks
                                 ?.thumbnail ??
-                            ''),
+                            'assets/images/design-for-writers-book-cover-tf-2-a-million-to-one (1).webp'),
                   );
                 }),
           );
         } else if (state is FeaturedBooksFailure) {
           return CustomError(errMesage: state.errMessage);
         } else {
-          return CircularProgressIndicator();
+          return ShimmerBooks();
         }
       },
+    );
+  }
+}
+
+class ShimmerBooks extends StatelessWidget {
+  const ShimmerBooks({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        shimmer(),
+        shimmer(),
+        shimmer(),
+      ],
+    );
+  }
+}
+
+class shimmer extends StatelessWidget {
+  const shimmer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: Shimmer.fromColors(
+        baseColor: Color.fromARGB(255, 53, 38, 105),
+        highlightColor: Color.fromARGB(135, 123, 104, 184),
+        child: Container(
+          width: 80,
+          height: 100,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(8),
+          ),
+        ),
+      ),
     );
   }
 }

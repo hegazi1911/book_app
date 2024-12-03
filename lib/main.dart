@@ -8,7 +8,6 @@ import 'package:book_app/feature/splash/Presentation/view/SplachView.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   setup();
@@ -37,9 +36,8 @@ class BooklyApp extends StatelessWidget {
         routerConfig: AppRouter.router,
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark().copyWith(
-            scaffoldBackgroundColor: Color(0xff100B20),
-            textTheme:
-                GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)),
+          scaffoldBackgroundColor: Color(0xff100B20),
+        ),
       ),
     );
   }
